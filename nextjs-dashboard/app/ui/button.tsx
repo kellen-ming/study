@@ -13,6 +13,7 @@ export function Button({ children, className, ...rest }: ButtonProps) {
         className,
       )}
     >
+      <button></button>
       {children}
     </button>
   );
