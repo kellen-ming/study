@@ -1,6 +1,6 @@
-'use server'
+'use server';
 
-import z from 'zod'
+import z from 'zod';
 import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -36,7 +36,7 @@ const FormSchema = z.object({
     .gt(0, { message: 'Please enter an amount greater than $0' }),
   status: z.enum(['pending', 'paid'], { invalid_type_error: 'Please select an invoice status.' }),
   date: z.string(),
-})
+});
 
 export type State = {
   errors?: {
@@ -51,10 +51,6 @@ export type State = {
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
-<<<<<<< HEAD
-
-=======
->>>>>>> b1a2fde1cb9b9e4f116d21f6cd579be2666cf8d8
 export async function createInvoice(prevState: State, formData: FormData) {
   // Validate form using Zod
   const validatedFields = CreateInvoice.safeParse({
@@ -62,10 +58,6 @@ export async function createInvoice(prevState: State, formData: FormData) {
     amount: formData.get('amount'),
     status: formData.get('status'),
   });
-<<<<<<< HEAD
-  
-=======
->>>>>>> b1a2fde1cb9b9e4f116d21f6cd579be2666cf8d8
  
   // If form validation fails, return errors early. Otherwise, continue.
   if (!validatedFields.success) {
