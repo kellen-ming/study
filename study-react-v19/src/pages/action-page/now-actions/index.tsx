@@ -9,6 +9,8 @@ export function NowActions() {
   /** 使用 startTransition 自动处理挂起状态、错误、表单和乐观更新*/
   const [isPending, startTransition] = useTransition();
 
+  console.log({isPending});
+  
   const handleSubmit = () => {
     
     /** update */
@@ -20,6 +22,7 @@ export function NowActions() {
       }
       setError('')
       setDatabaseData(res.data)
+      return
     })
     
   };
