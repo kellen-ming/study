@@ -1,13 +1,16 @@
-import { Dividing } from '../components/Dividing'
+import { Dividing } from '../../components/Dividing'
 import { BeforeActions } from './before-actions'
-import { NowActions } from './now-actions'
+import { UseActionStatePage } from './use-actionState'
+import { UseTransitionPage } from './use-transition'
 
 export function ActionPage() {
   return (
     <div>
       <BeforeActions />
       <Dividing />
-      <NowActions />
+      <UseTransitionPage />
+      <Dividing />
+      <UseActionStatePage />
     </div>
   )
 }

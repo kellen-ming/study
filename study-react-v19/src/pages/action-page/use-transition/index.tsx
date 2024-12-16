@@ -1,12 +1,12 @@
 import { useState, useTransition } from 'react';
-import { type Result, updateName } from '../../../apis';
+import { updateName } from '../../../apis';
 
-export function NowActions() {
+export function UseTransitionPage() {
   const [name, setName] = useState<string>("");
   const [databaseData, setDatabaseData] = useState<Record<string,string>>()
   const [error, setError] = useState<string>('');
   
-  /** 使用 startTransition 自动处理挂起状态、错误、表单和乐观更新*/
+  /** 使用 startTransition 自动处理挂起状态，也就是竞态处理 */
   const [isPending, startTransition] = useTransition();
 
   console.log({isPending});
@@ -28,8 +28,8 @@ export function NowActions() {
   };
 
   return (
-    <div className='flex flex-col '>
-      <h3>useTransition + useOptimistic + useActionState</h3>
+    <div>
+      <h3>useTransition: 使用 startTransition 自动处理挂起状态，也就是竞态处理</h3>
       <input value={name} onChange={(event) => setName(event.target.value)} />
       <button onClick={handleSubmit} disabled={isPending}>
         Update

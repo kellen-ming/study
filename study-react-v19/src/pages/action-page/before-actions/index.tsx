@@ -3,7 +3,7 @@ import { updateName } from '../../../apis';
 
 export function BeforeActions() {
   const [name, setName] = useState<string>("");
-  const [databaseData, setDatabaseData] = useState<Record<string,string>>()
+  const [databaseData, setDatabaseData] = useState<Record<string, any>>()
   const [error, setError] = useState<string>('');
   const [isPending, setIsPending] = useState<boolean>(false);
 
@@ -22,7 +22,7 @@ export function BeforeActions() {
   };
 
   return (
-    <div className='flex flex-col '>
+    <div>
       <h3>useState</h3>
       <input value={name} onChange={(event) => setName(event.target.value)} />
       <button onClick={handleSubmit} disabled={isPending}>

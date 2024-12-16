@@ -6,9 +6,11 @@ function App() {
   return (
     <>
       <h1>React v19</h1>
-      <NavLink  to="/action">action</NavLink>
+      <div className="nav-link">
+        <NavLink to="/action">action</NavLink>
+        <NavLink to="/hooks">hooks</NavLink>
+      </div>
       <Outlet />
-      
     </>
   )
 }
