@@ -31,8 +31,15 @@ export async function submitForm(query: FormData) {
   await new Promise((res) => setTimeout(res, 1000));
 }
 
-
-export async function deliverMessage(message: FormDataEntryValue | null) {
-  await new Promise((res) => setTimeout(res, 1000));
-  return message;
+/** 新增代表事件 */
+export async function addTodoAction(todo: string) {
+  return new Promise<string>((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.3) {
+        resolve(todo);
+      } else {
+        reject("Failed!");
+      }
+    }, 1000);
+  });
 }
