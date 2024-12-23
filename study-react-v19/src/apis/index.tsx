@@ -9,19 +9,20 @@ export async function updateName(data: Record<string, any>): Promise<Result> {
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      if(!data?.name) {
+      // if(Math.random() > 0.3) {
+        // resolve({
+        //   state: '1',
+        //   message: 'success',
+        //   data
+        // })
+      // } {
         resolve({
           state: '0',
-          message: 'name is required',
+          message: 'failed',
           data
         })
-      }
+      // }
       
-      resolve({
-        state: '1',
-        message: 'success',
-        data
-      })
     }, 2000)
   })
 }

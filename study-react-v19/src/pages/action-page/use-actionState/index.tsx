@@ -26,8 +26,8 @@ export function UseActionStatePage() {
      {
        isPending ? <p>pending...</p> :
        <>
-       <p>name: {databaseData?.name || '-' }</p>
-       {error && <p className='text-red-400'>{`error: ${error}`}</p>}
+        <p>name: {databaseData?.name || '-' }</p>
+        {error && <p className='text-red-400'>{`error: ${error}`}</p>}
        </>
      }
     </div>

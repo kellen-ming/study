@@ -34,8 +34,9 @@ export function UseTransitionPage() {
       <button onClick={handleSubmit} disabled={isPending}>
         Update
       </button>
+      {isPending && <p>pending...</p>}
       <p>name: {databaseData?.name || '-' }</p>
-      {error && <p className='text-red-400'>{`error: ${error}`}</p>}
+      {error && <p style={{ color: 'red' }}>{`error: ${error}`}</p>}
     </div>
   );
 }

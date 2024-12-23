@@ -28,8 +28,9 @@ export function BeforeActions() {
       <button onClick={handleSubmit} disabled={isPending}>
         Update
       </button>
+      <p>{isPending ? 'pending...' : ''}</p>
       <p>name: {databaseData?.name || '-' }</p>
-      {error && <p className='text-red-400'>{`error: ${error}`}</p>}
+      {error && <p style={{ color: 'red' }}>{`error: ${error}`}</p>}
     </div>
   );
 }
